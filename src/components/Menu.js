@@ -55,7 +55,7 @@ const Menu = () => {
     return (
         <main className='menu '>
             <h2>Our Menu</h2>
-            {numPizzas > 0 && (<ul className='pizzas'>
+            {numPizzas > 0 ? (<ul className='pizzas'>
                 {/* {pizzaData.map((pizza) => (<Pizza
                     name={pizza.name}
                     photoName={pizza.photoName}
@@ -64,7 +64,7 @@ const Menu = () => {
                 />))} */}
                 {pizzas.map((pizza) => (<Pizza pizzaObj={pizza} key={pizza.name} />))}
             </ul>
-            )}
+            ) : <p>We're still working on our menu, Please comeback later :)</p>}
 
         </main>
     )

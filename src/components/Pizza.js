@@ -1,12 +1,20 @@
 import React from 'react'
-import spinaci from '../pizzas/spinaci.jpg'
-const Pizza = () => {
+const Pizza = (props) => {
     return (
-        <>
-            <img src={spinaci} alt="Pizzas Spinaci" />
-            <h3>Pizza Spinaci</h3>
-            <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-        </>
+        <li className='pizza'>
+            {/* <img src={props.photoName} alt={props.name} />
+            <div>
+                <h3>{props.name}</h3>
+                <p>{props.ingredients}</p>
+                <span>{props.price + 3}</span>
+            </div> */}
+            <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+            <div>
+                <h3>{props.pizzaObj.name}</h3>
+                <p>{props.pizzaObj.ingredients}</p>
+                <span>{props.pizzaObj.price + 3}</span>
+            </div>
+        </li>
     )
 }
 

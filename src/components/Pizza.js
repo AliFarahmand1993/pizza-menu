@@ -1,21 +1,21 @@
 import React from 'react'
-const Pizza = (props) => {
+const Pizza = ({ pizzaObj }) => {
 
-    if (props.pizzaObj.soldOut) return null;
+    // if ( pizzaObj.soldOut) return null;
 
     return (
-        <li className='pizza'>
-            {/* <img src={props.photoName} alt={props.name} />
+        <li className={`pizza ${pizzaObj.soldOut ? 'sold-out' : ""}`}>
+            {/* <img src={photoName} alt={ name} />
             <div>
-                <h3>{props.name}</h3>
-                <p>{props.ingredients}</p>
-                <span>{props.price + 3}</span>
+                <h3>{name}</h3>
+                <p>{ ingredients}</p>
+                <span>{ price + 3}</span>
             </div> */}
-            <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+            <img src={pizzaObj.photoName} alt={pizzaObj.name} />
             <div>
-                <h3>{props.pizzaObj.name}</h3>
-                <p>{props.pizzaObj.ingredients}</p>
-                <span>{props.pizzaObj.price + 3}</span>
+                <h3>{pizzaObj.name}</h3>
+                <p>{pizzaObj.ingredients}</p>
+                <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price + 3}</span>
             </div>
         </li>
     )
